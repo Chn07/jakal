@@ -1,0 +1,103 @@
+<ion-content [fullscreen]="true">
+  <ion-fab slot="fixed">
+    <ion-button fill="clear" color="dark" (click)="back()">
+      <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+    </ion-button>
+  </ion-fab>
+
+  <div align="center" class="juice">
+    <img src="assets/icon/logo2.png">
+  </div>
+
+  <form [formGroup]="form" class="ion-margin-horizontal">
+    <ion-list class="ion-margin-horizontal">
+      <ion-list-header class="ion-margin-bottom">
+        <ion-label>Sign Up</ion-label>
+      </ion-list-header>
+
+      <div>
+        <ion-input
+          label=""
+          class="ion-margin-bottom"
+          color="primary"
+          type="text"
+          placeholder="Name"
+          formControlName="name">
+          <ion-icon slot="start" name="person-outline" color="dark"></ion-icon>
+        </ion-input>
+        <ion-text color="danger" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+          * Please enter your name.
+        </ion-text>
+      </div>
+
+      <div>
+        <ion-input
+          label=""
+          class="ion-margin-bottom"
+          color="primary"
+          type="tel"
+          placeholder="Phone"
+          formControlName="phone">
+          <ion-icon slot="start" name="call-outline" color="dark"></ion-icon>
+        </ion-input>
+        <ion-text color="danger" *ngIf="form.get('phone')?.invalid && form.get('phone')?.touched">
+          * Please enter a valid phone number.
+        </ion-text>
+      </div>
+
+      <div>
+        <ion-input
+          label=""
+          class="ion-margin-bottom"
+          color="primary"
+          type="email"
+          placeholder="Email address"
+          formControlName="email">
+          <ion-icon slot="start" name="mail-outline" color="dark"></ion-icon>
+        </ion-input>
+        <ion-text color="danger" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+          * Please enter a valid email address.
+        </ion-text>
+      </div>
+
+      <div>
+        <ion-input
+        label=""
+        class="ion-margin-bottom"
+        color="primary"
+        type="password"
+        placeholder="Password"
+        formControlName="password">
+        <ion-icon slot="start" name="lock-closed-outline" color="dark"></ion-icon>
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+      </ion-input>
+
+      <ion-text color="danger" *ngIf="form.get('password')?.touched">
+        <span *ngIf="form.get('password')?.errors?.['required']">* Please enter your password.</span>
+        <span *ngIf="form.get('password')?.errors?.['minlength']">* Password must be at least 8 characters long.</span>
+      </ion-text>
+
+
+      </div>
+    </ion-list>
+
+    <ion-button
+      expand="block"
+      size="large"
+      class="ion-padding signup-button"
+      shape="round"
+      [strong]="true"
+      (click)="onSubmit()">
+      <ion-text>SIGN UP</ion-text>
+    </ion-button>
+  </form>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <div [align]="'center'" class="ion-padding-bottom login">
+    <ion-text color="dark">Already have an account?</ion-text>
+    <ion-button fill="clear" color="dark" size="small" [strong]="true" (click)="back()">
+      <ion-text slot="start">Login</ion-text>
+    </ion-button>
+  </div>
+</ion-footer>

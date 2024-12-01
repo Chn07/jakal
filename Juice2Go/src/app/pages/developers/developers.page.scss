@@ -1,0 +1,51 @@
+ion-content {
+  --background: linear-gradient(
+      to bottom,
+      var(--ion-color-secondary),
+      var(--ion-color-primary)
+  );
+
+.developers-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.developer-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  max-width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #fff;
+}
+
+.developer-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.developer-card h2 {
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+.developer-card h4 {
+  font-size: 16px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.developer-card p {
+  font-style: italic;
+  color: #333;
+}
+}

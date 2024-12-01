@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">juice2go</string>
+    <string name="title_activity_main">juice2go</string>
+    <string name="package_name">com.juice2go.app</string>
+    <string name="custom_url_scheme">com.juice2go.app</string>
+</resources>

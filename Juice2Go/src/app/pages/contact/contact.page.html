@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Contact Us</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="contact-info">
+    <h2>We'd love to hear from you!</h2>
+    <p>Contact us using the form below or reach us directly through our details.</p>
+
+    <div class="details">
+      <ion-icon name="call-outline" aria-label="Phone"></ion-icon>
+      <span>+1 (123) 456-7890</span>
+    </div>
+    <div class="details">
+      <ion-icon name="mail-outline" aria-label="Email"></ion-icon>
+      <span>support&#64;juice2go.com</span>
+    </div>
+    <div class="details">
+      <ion-icon name="location-outline" aria-label="Address"></ion-icon>
+      <span>1234 Elm Street,Potsdam</span>
+    </div>
+  </div>
+
+  <form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
+    <ion-item>
+      <ion-label position="floating">Your Name</ion-label>
+      <ion-input type="text" formControlName="name" required></ion-input>
+    </ion-item>
+    <div *ngIf="contactForm.controls['name'].touched && contactForm.controls['name'].invalid" class="error">
+      <ion-text color="danger">Name must be at least 3 characters long.</ion-text>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" formControlName="email" required></ion-input>
+    </ion-item>
+    <div *ngIf="contactForm.controls['email'].touched && contactForm.controls['email'].invalid" class="error">
+      <ion-text color="danger">Please enter a valid email address.</ion-text>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Message</ion-label>
+      <ion-textarea formControlName="message" required></ion-textarea>
+    </ion-item>
+    <div *ngIf="contactForm.controls['message'].touched && contactForm.controls['message'].invalid" class="error">
+      <ion-text color="danger">Message must be at least 10 characters long.</ion-text>
+    </div>
+
+    <ion-button expand="block" type="submit" [disabled]="!contactForm.valid">Send</ion-button>
+  </form>
+
+  <div class="social-media">
+    <h3>Follow us:</h3>
+    <div class="social-icons">
+      <ion-button fill="clear" href="https://facebook.com" aria-label="Facebook">
+        <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" href="https://twitter.com" aria-label="Twitter">
+        <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" href="https://instagram.com" aria-label="Instagram">
+        <ion-icon slot="icon-only" name="logo-instagram"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

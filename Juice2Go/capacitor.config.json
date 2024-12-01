@@ -1,0 +1,7 @@
+{
+    "appId": "com.juice2go.app",
+    "appName": "juice2go",
+    "webDir": "www/browser",
+    "bundledWebRuntime": false
+  }
+  
